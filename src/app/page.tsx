@@ -1,95 +1,96 @@
+'use client';
+
+import React, { useState } from "react";
+import Head from "next/head";
 import Image from "next/image";
-import styles from "./page.module.css";
+
+import { Prediction } from 'replicate';
+
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 export default function Home() {
+  const [prediction, setPrediction] = useState<Prediction | null>(null);
+  const [error, setError] = useState(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const response = await fetch('/api/predictions', {
+      method: 'POST',
+      body: new FormData(e.currentTarget),
+    });
+
+    let prediction = await response.json();
+    if (response.status !== 201) {
+      setError(prediction.detail);
+      return;
+    }
+    setPrediction(prediction);
+
+    while (
+      prediction.status !== "succeeded" &&
+      prediction.status !== "failed"
+    ) {
+      await sleep(1000);
+      const response = await fetch("/api/predictions/" + prediction.id, { cache: 'no-store' });
+      prediction = await response.json();
+      if (response.status !== 200) {
+        setError(prediction.detail);
+        return;
+      }
+      console.log({ prediction });
+      setPrediction(prediction);
+    }
+  };
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
+    <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-gray-100">
+      <div className="flex flex-col z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex bg-white p-10 border-solid border-2 border-gray-300 rounded-3xl">
+        <Head>
+          <title>Replicate + Next.js</title>
+        </Head>
+
+        <p className="mb-4 text-lg text-gray-700">
+          Dream something with{" "}
+          <a href="https://replicate.com/stability-ai/stable-diffusion" className="text-blue-500 hover:underline">
+            SDXL
+          </a>:
         </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        <form onSubmit={handleSubmit} className="flex flex-col items-center w-full">
+          <input
+            type="text"
+            name="prompt"
+            placeholder="Enter a prompt to display an image"
+            className="px-4 py-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <button
+            type="submit"
+            className="px-4 py-2 mt-4 w-full bg-blue-500 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+            Go!
+          </button>
+        </form>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        {error && <div className="mt-4 text-red-500">{error}</div>}
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+        {prediction && (
+          <div className="mt-4">
+            {prediction.output && (
+              <div className="flex flex-col items-center justify-center w-full">
+                <Image
+                  src={prediction.output[prediction.output.length - 1]}
+                  alt="output"
+                  width={500}
+                  height={500}
+                  className="object-cover w-full h-full rounded-md border-gray-300"
+                />
+              </div>
+            )}
+            <p className="mt-4 text-lg text-gray-700">status: {prediction.status}</p>
+          </div>
+        )}
       </div>
     </main>
-  );
+  )
 }
