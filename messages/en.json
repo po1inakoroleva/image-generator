@@ -2,7 +2,7 @@
   "MainPage": {
     "header" : {
       "title": "Make pictures for your project using AI",
-      "startBtn": "Get started"
+      "startBtn": "Start now"
     },
     "anchors": {
       "examples": "examples",
