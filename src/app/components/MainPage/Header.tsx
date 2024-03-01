@@ -46,8 +46,8 @@ const Header: FC = () => {
       </header>
       <div className="bg-white dark:bg-gray-700 overflow-hidden relative">
         <div className="container relative z-10 flex items-start py-32 mx-auto">
-          <div className="relative ml-10  w-1/2 z-10 flex flex-col items-start">
-            <h1 className="font-extrabold text-balance leading-tight text-gray-800 dark:text-gray-100 text-5xl sm:text-8xl">
+          <div className="relative ml-10 w-1/2 px-6 z-10 flex flex-col items-start">
+            <h1 className="font-extrabold text-balance leading-tight text-gray-800 dark:text-gray-100 text-6xl sm:text-8xl">
               {t('header.title')}
             </h1>
             <StartButton />
