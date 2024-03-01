@@ -25,7 +25,7 @@ const Examples: FC = () => {
   const benefits: readonly string[] = [t('examples.benefits.24/7'), t('examples.benefits.free'), t('examples.benefits.unlim'), t('examples.benefits.easily')];
 
   return (
-    <div id="examples" className="relative max-w-screen-xl p-4 px-4 mb-20 mx-auto bg-white dark:bg-gray-800 sm:px-6 lg:px-8 py-26 lg:mt-20">
+    <div id="examples" className="relative max-w-screen-xl p-4 px-4 mb-20 mx-auto bg-white dark:bg-gray-700 sm:px-6 lg:px-8 py-26 lg:mt-20">
       <div className="relative">
         <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
           <div className="ml-auto lg:col-start-2 lg:max-w-2xl">
