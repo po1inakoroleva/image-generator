@@ -26,7 +26,7 @@ const Dropdown: FC<DropdownProps> = ({ anchorsNames }) => (
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute left-4 right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Menu.Items className="absolute left-4 right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white dark:bg-gray-700 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           {anchorsNames.map((name) => (
             <div key={anchorsNames.indexOf(name)} className="py-1">
               <Menu.Item>
@@ -35,7 +35,7 @@ const Dropdown: FC<DropdownProps> = ({ anchorsNames }) => (
                     href="#examples"
                     className={cn(
                       active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block px-4 py-2 text-sm mx-3 text-lg text-indigo-500 uppercase cursor-pointer hover:text-gray-300',
+                      'block px-4 py-2 text-sm mx-3 text-lg text-indigo-500 uppercase hover:text-gray-300',
                     )}
                   >
                     {name}
