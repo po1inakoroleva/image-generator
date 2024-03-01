@@ -1,0 +1,41 @@
+{
+  "MainPage": {
+    "header" : {
+      "title": "Make pictures for your presentation using AI",
+      "startBtn": "Get started"
+    },
+    "anchors": {
+      "examples": "examples",
+      "instructions": "instructions",
+      "about": "about"
+    },
+    "examples": {
+      "benefits": {
+        "24/7": "24/7",
+        "free": "Free",
+        "unlim": "Unlimited",
+        "easily": "Easily"
+      },
+      "title": "Imagine what you want and create it",
+      "description": "You can create what suits you best and not worry about copyright. Everything you create will be unique."
+    },
+    "instructions": {
+      "title": "How to create a picture?",
+      "firstStep": {
+        "title": "First step",
+        "description": "Decide what you want to create."
+      },
+      "secondStep": {
+        "title": "Second step",
+        "description": "Briefly describe your request. The style is already defined, don't worry about it."
+      },
+      "thirdStep": {
+        "title": "Third step",
+        "description": "Download the received image and make the next one! If you are not satisfied with the result, try again. You can also experiment with the query."
+      }
+    },
+    "about": {
+      "text": "Hello! This pet project was created for training purposes. But I will be glad if it turns out to be useful for someone. If you want to see my other projects or contact me, you can go to my github."
+    }
+  }
+}
