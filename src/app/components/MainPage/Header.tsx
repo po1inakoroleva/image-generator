@@ -30,7 +30,7 @@ const Header: FC = () => {
 
   return (
     <div className="relative h-screen overflow-hidden">
-      <div className="absolute inset-0 bg-black opacity-25 bg-white dark:bg-gray-700">
+      <div className="absolute inset-0 opacity-25 bg-white dark:bg-gray-700">
       </div>
       <header className="absolute top-0 left-0 right-0 z-20">
         <nav className="container px-6 py-4 mx-auto md:px-12">
