@@ -45,12 +45,12 @@ const Examples: FC = () => {
           <div className="relative mt-10 lg:-mx-4 relative-20 lg:mt-0 lg:col-start-1">
             <div className="relative space-y-4">
               <div className="flex items-end justify-center space-x-4 lg:justify-start">
-                <img className="w-40 rounded-lg shadow-lg md:w-56" width="200" src="/images/man-comp.png" alt="example#1" />
-                <img className="w-44 rounded-lg shadow-lg md:w-64" width="260" src="/images/woman-presentation.png" alt="example#2" />
+                <img className="w-36 rounded-lg shadow-lg md:w-56" width="200" src="/images/man-comp.png" alt="example#1" />
+                <img className="w-40 rounded-lg shadow-lg md:w-64" width="260" src="/images/woman-presentation.png" alt="example#2" />
               </div>
               <div className="flex items-start justify-center ml-12 space-x-4 lg:justify-start">
-                <img className="w-44 rounded-lg shadow-lg md:w-64" width="200" src="/images/man-paint.png" alt="example#3" />
-                <img className="w-40 rounded-lg shadow-lg md:w-56" width="200" src="/images/doctor.png" alt="example#4" />
+                <img className="w-40 rounded-lg shadow-lg md:w-64" width="200" src="/images/man-paint.png" alt="example#3" />
+                <img className="w-36 rounded-lg shadow-lg md:w-56" width="200" src="/images/doctor.png" alt="example#4" />
               </div>
             </div>
           </div>
