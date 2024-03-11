@@ -25,7 +25,7 @@ const Examples: FC = () => {
   const benefits: readonly string[] = [t('examples.benefits.24/7'), t('examples.benefits.free'), t('examples.benefits.unlim'), t('examples.benefits.easily')];
 
   return (
-    <div id="examples" className="relative max-w-screen-xl p-4 px-4 mb-20 mx-auto bg-white dark:bg-gray-700 sm:px-6 lg:px-8 py-26 lg:mt-20">
+    <div id="examples" className="relative max-w-screen-xl p-4 mb-20 mx-auto bg-white dark:bg-gray-700 sm:px-4 lg:px-6 py-26 lg:mt-20">
       <div className="relative">
         <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
           <div className="ml-auto lg:col-start-2 lg:max-w-2xl">
@@ -42,9 +42,9 @@ const Examples: FC = () => {
               {benefits.map((item) => <Benefit key={benefits.indexOf(item)} text={item} />)}
             </ul>
           </div>
-          <div className="relative mt-10 lg:-mx-4 relative-20 lg:mt-0 lg:col-start-1">
+          <div className="relative mt-10 relative-20 lg:mt-0 lg:col-start-1">
             <div className="relative space-y-4">
-              <div className="flex items-end justify-center space-x-4 lg:justify-start">
+              <div className="flex lg:-mxc-4 items-end justify-center space-x-4 lg:justify-start">
                 <img className="w-36 rounded-lg shadow-lg md:w-56" width="200" src="/images/man-comp.png" alt="example#1" />
                 <img className="w-40 rounded-lg shadow-lg md:w-64" width="260" src="/images/woman-presentation.png" alt="example#2" />
               </div>

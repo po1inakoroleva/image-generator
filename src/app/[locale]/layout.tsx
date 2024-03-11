@@ -20,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang={locale}>
       <body className="dark:bg-gray-700">
+
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>
