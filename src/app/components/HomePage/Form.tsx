@@ -28,7 +28,7 @@ const Form: FC = () => {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-3 bg-white dark:bg-gray-700">
-      <div className="flex flex-col z-10 max-w-5xl w-full items-center justify-between text-sm lg:flex bg-white dark:bg-gray-700 p-10 border-solid border-2 border-gray-300 rounded-3xl">
+      <div className="flex flex-col z-10 max-w-5xl w-full items-center justify-between text-sm lg:flex bg-white dark:bg-gray-700 p-10 border-solid border border-gray-300 rounded-3xl">
         <p className="py-4 text-2xl font-semibold text-gray-700 sm:text-xl dark:text-white">
           Dream something
         </p>
