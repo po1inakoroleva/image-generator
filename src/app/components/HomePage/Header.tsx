@@ -8,7 +8,7 @@ const Header: FC = () => {
 
   return (
     <header className="absolute top-0 left-0 right-0 z-20">
-      <nav className="container px-6 py-4 mx-auto md:px-3">
+      <nav className="container px-3 py-4 mx-auto md:px-3">
         <div className="items-center justify-center md:flex">
           <div className="items-center md:flex">
             <a href='/' className="flex mx-3 text-lg text-indigo-500 uppercase cursor-pointer hover:text-gray-300">
