@@ -10,6 +10,9 @@ Make images in the same style for your project using AI
 ⭐️ Mobile version  
 ⭐️ Dark theme
 
+### Dark theme + mobile (demo video)
+![Demo video (mobile version)](mobile-image-generator.gif)
+
 ## Installation
 ```
 git clone git@github.com:po1inakoroleva/image-generator.git
