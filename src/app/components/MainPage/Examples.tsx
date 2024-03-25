@@ -3,7 +3,9 @@
 import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 
-import { BenefitProps } from '../../types.ts';
+interface BenefitProps {
+  text: string;
+}
 
 const Benefit: FC<BenefitProps> = ({ text }) => (
   <li className="mt-6 lg:mt-0">

@@ -39,6 +39,9 @@
     }
   },
   "HomePage": {
-    "backBtn": "Back"
+    "backBtn": "Back",
+    "title": "Dream something",
+    "sbmtBtn": "Go!",
+    "status": "status: "
   }
 }

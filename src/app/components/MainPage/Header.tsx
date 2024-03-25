@@ -3,8 +3,11 @@
 import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 
-import { AnchorProps } from '../../types.ts';
 import Dropdown from './Dropdown.tsx';
+
+interface AnchorProps {
+  name: string;
+}
 
 const Anchor: FC<AnchorProps> = ({ name }) => {
   const href = `#${name}`;

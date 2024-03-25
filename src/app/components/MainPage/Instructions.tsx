@@ -3,7 +3,10 @@
 import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 
-import { InstructionProps } from '../../types.ts';
+interface InstructionProps {
+  title: string;
+  description: string;
+}
 
 const Instruction: FC<InstructionProps> = ({ title, description }) => (
   <div className="w-full px-4 py-4 mt-6 bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/2 lg:w-1/4 dark:bg-gray-700">
@@ -26,6 +29,7 @@ const Instruction: FC<InstructionProps> = ({ title, description }) => (
 const Instructions = () => {
   const t = useTranslations('MainPage');
   const instructionSteps: readonly string[][] = [[t('instructions.firstStep.title'), t('instructions.firstStep.description')], [t('instructions.secondStep.title'), t('instructions.secondStep.description')], [t('instructions.thirdStep.title'), t('instructions.thirdStep.description')]];
+
   return (
     <div className='my-20 mx-10'>
       <h2 className="text-center font-semibold text-xl leading-10 text-indigo-500 uppercase">

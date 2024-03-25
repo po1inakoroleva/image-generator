@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, FC } from 'react';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 import { useAppDispatch, useAppSelector } from '../../hooks.ts';
@@ -8,6 +9,7 @@ import { sendFormData, checkStatus } from '../../slices/actions.ts';
 import { selectPicture } from '../../slices/pictureSlice.ts';
 
 const Form: FC = () => {
+  const t = useTranslations('HomePage');
   const dispatch = useAppDispatch();
   const { status, picture } = useAppSelector(selectPicture);
 
@@ -30,7 +32,7 @@ const Form: FC = () => {
     <main className="flex min-h-screen flex-col items-center justify-center p-3 bg-white dark:bg-gray-700">
       <div className="flex flex-col z-10 max-w-5xl w-full items-center justify-between text-sm lg:flex bg-white dark:bg-gray-700 p-10 border-solid border border-gray-300 rounded-3xl">
         <p className="py-4 text-2xl font-semibold text-gray-700 sm:text-xl dark:text-white">
-          Dream something
+          {t('title')}
         </p>
         <form onSubmit={handleSubmit} className="flex flex-col items-center w-full">
           <input
@@ -43,7 +45,7 @@ const Form: FC = () => {
             type="submit"
             className="px-4 py-2 mt-4 w-full text-white font-semibold bg-indigo-500 hover:bg-indigo-600 focus:ring-indigo-500 rounded-md focus:outline-none focus:ring-2"
           >
-            Go!
+            {t('sbmtBtn')}
           </button>
         </form>
         {picture && (
@@ -59,7 +61,7 @@ const Form: FC = () => {
                 />
               </div>
             )}
-            <p className="mt-4 text-lg text-gray-700">status: {picture.status}</p>
+            <p className="mt-4 text-lg text-gray-700">{t('status')}{picture.status}</p>
           </div>
         )}
       </div>
