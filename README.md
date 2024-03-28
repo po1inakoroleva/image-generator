@@ -1,5 +1,8 @@
 # Image generator
-Make images in the same style for your project using AI  
+Make images in the same style for your project using AI. 
+
+**Disclamer!** The project has run out of tokens to support AI. A solution to this problem is being developed.  
+
 ![Demo video](image-generator.gif)
 
 ### Website
