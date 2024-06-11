@@ -6,7 +6,7 @@ Make images in the same style for your project using AI.
 ![Demo video](image-generator.gif)
 
 ### Website
-[Image generator](https://image-generator-po1inakoroleva.vercel.app)
+[Image generator](https://open-image-generator.vercel.app/en)
 
 ### Features
 ⭐️ Responsive design  
